@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="IdleClickerPoker"
-run/main_scene="uid://b0mk5enf2w8y1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

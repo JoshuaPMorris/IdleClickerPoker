@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://blhuvgs7oeqxd"]
+
+[ext_resource type="Texture2D" uid="uid://dkflsg2ra2mgg" path="res://Art/Sprites/Characters/Placeholder1.png" id="1_pr5ut"]
+[ext_resource type="Script" uid="uid://cbr4u7j4efx3d" path="res://Scripts/CharacterScripts/EnemyBase.cs" id="2_sqymv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pr5ut"]
+size = Vector2(128, 128)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("2_sqymv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pr5ut")
+
+[node name="Placeholder1" type="Sprite2D" parent="."]
+texture = ExtResource("1_pr5ut")
