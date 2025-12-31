@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://de4j6qunkr10"]
+
+[ext_resource type="PackedScene" uid="uid://blhuvgs7oeqxd" path="res://Scenes/Characters/Enemies/BasicEnemy.tscn" id="1_2wl7v"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("1_2wl7v")]
+position = Vector2(850.99994, 207.99998)
+scale = Vector2(2.1600003, 2.1600003)
