@@ -1,9 +1,145 @@
-[gd_scene format=3 uid="uid://b0mk5enf2w8y1"]
+[gd_scene load_steps=5 format=3 uid="uid://b0mk5enf2w8y1"]
 
-[node name="Ui" type="Control"]
+[ext_resource type="Texture2D" uid="uid://dsy54sc2itckp" path="res://Art/Sprites/Sheets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_w371h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nxvpl"]
+texture = ExtResource("1_w371h")
+region_rect = Rect2(837, 132, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dewlx"]
+texture = ExtResource("1_w371h")
+region_rect = Rect2(869, 134, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w371h"]
+texture = ExtResource("1_w371h")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(626, 230, 12, 4)
+
+[node name="inGameUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="popupMenu" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="baseUpgradeScreenContainer" type="HBoxContainer" parent="popupMenu"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="seperator" type="Control" parent="popupMenu/baseUpgradeScreenContainer"]
+layout_mode = 2
+
+[node name="upgradeMenuScreen" type="MarginContainer" parent="popupMenu/baseUpgradeScreenContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer"]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+texture = ExtResource("1_w371h")
+region_rect = Rect2(741, 38, 22, 22)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="buttonContainer" type="VBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 4
+
+[node name="topButtonContainer" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/topButtonContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgrade1Button2" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/topButtonContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="bottomButtonContainer2" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgrade1Button2" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="toggleUpgradeButton" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer"]
+custom_minimum_size = Vector2(4, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_w371h")
+
+[node name="baseUpgradeOpenButtonContainer" type="HBoxContainer" parent="popupMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="seperator" type="Control" parent="popupMenu/baseUpgradeOpenButtonContainer"]
+layout_mode = 2
+
+[node name="toggleUpgradeButton" type="Button" parent="popupMenu/baseUpgradeOpenButtonContainer"]
+custom_minimum_size = Vector2(4, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_w371h")
