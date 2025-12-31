@@ -14,3 +14,4 @@ shape = SubResource("RectangleShape2D_pr5ut")
 
 [node name="Placeholder1" type="Sprite2D" parent="."]
 texture = ExtResource("1_pr5ut")
+hframes = 2
