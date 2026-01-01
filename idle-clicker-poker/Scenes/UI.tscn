@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0mk5enf2w8y1"]
+[gd_scene load_steps=7 format=3 uid="uid://b0mk5enf2w8y1"]
 
+[ext_resource type="Script" uid="uid://be4143faqssws" path="res://Scripts/UI/PopupMenu.cs" id="1_nxvpl"]
 [ext_resource type="Texture2D" uid="uid://dsy54sc2itckp" path="res://Art/Sprites/Sheets/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_w371h"]
+[ext_resource type="Texture2D" uid="uid://db3hte6jf558h" path="res://icon.svg" id="3_dewlx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nxvpl"]
 texture = ExtResource("1_w371h")
@@ -26,13 +28,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="popupMenu" type="MarginContainer" parent="."]
+[node name="popupMenu" type="MarginContainer" parent="." node_paths=PackedStringArray("upgradeScreen", "openUpgradeScreen")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nxvpl")
+upgradeScreen = NodePath("baseUpgradeScreenContainer")
+openUpgradeScreen = NodePath("baseUpgradeOpenButtonContainer")
 
 [node name="baseUpgradeScreenContainer" type="HBoxContainer" parent="popupMenu"]
 layout_mode = 2
@@ -78,10 +83,15 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 4
 
-[node name="topButtonContainer" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+[node name="upgradeContainer1" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
 layout_mode = 2
 
-[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/topButtonContainer"]
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer1"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -90,20 +100,16 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
 
-[node name="upgrade1Button2" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/topButtonContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
-theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
-
-[node name="bottomButtonContainer2" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+[node name="upgradeContainer2" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2"]
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer2"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -112,7 +118,160 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
 
-[node name="upgrade1Button2" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/bottomButtonContainer2"]
+[node name="upgradeContainer3" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer3"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgradeContainer4" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer4"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgradeContainer5" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer5"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer5"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgradeContainer6" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer6"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer6"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgradeContainer7" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer7"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer7"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgradeContainer8" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer8"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer8"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgradeContainer9" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer9"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer9"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgradeContainer10" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer10"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer10"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_nxvpl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dewlx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dewlx")
+
+[node name="upgradeContainer11" type="HBoxContainer" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="TextureRect" type="TextureRect" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer11"]
+layout_mode = 2
+texture = ExtResource("3_dewlx")
+expand_mode = 3
+
+[node name="upgrade1Button" type="Button" parent="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/NinePatchRect/MarginContainer/buttonContainer/upgradeContainer11"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -132,14 +291,17 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_w371h")
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-theme_override_constants/separation = 20
-
-[node name="seperator" type="Control" parent="popupMenu/baseUpgradeOpenButtonContainer"]
-layout_mode = 2
+theme_override_constants/separation = 450
 
 [node name="toggleUpgradeButton" type="Button" parent="popupMenu/baseUpgradeOpenButtonContainer"]
 custom_minimum_size = Vector2(4, 50)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxTexture_w371h")
+
+[node name="seperator" type="Control" parent="popupMenu/baseUpgradeOpenButtonContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="popupMenu/baseUpgradeScreenContainer/upgradeMenuScreen/HBoxContainer/toggleUpgradeButton" to="popupMenu" method="_on_toggle_upgrade_button_pressed"]
+[connection signal="pressed" from="popupMenu/baseUpgradeOpenButtonContainer/toggleUpgradeButton" to="popupMenu" method="_on_toggle_upgrade_button_pressed"]
