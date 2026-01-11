@@ -1,0 +1,17 @@
+Stat boosts e.g. Better luck, faster shuffeling, Damage boosts, 
+Mainly just generick boosts to numbers with not so much of a focus on gameplay and new mechanics
+
+Idlers/Auto Players
+Presented as characters. Core automation aspect. Introduced early in the game, maybe the first upgrade made available. 
+Some have different interactions with different cards/hands. 
+Some might have special interactions with other upgrades which gives them boosts.
+
+Card/Deck upgrades
+Allow you to have different types of cards some which interact with Players and unlock their abilities, and some that give certain boosts when they are drawn.
+Introduced later than most other mechanics.
+Limit the number of the different types of cards so only some abilities can be used at once?
+
+Shuffler upgrades: boosts the speed hands are dealt
+Basically just makes things happen faster
+
+
