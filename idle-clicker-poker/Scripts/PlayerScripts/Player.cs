@@ -7,14 +7,14 @@ public partial class Player : Node
     public override void _Ready()
     {
         base._Ready();
-        card = GetNode<Card>("Card");
+        //card = GetNode<Card>("Card");
     }
 
     public float GetDamage()
     {
         float damage = 0;
 
-        damage += card.GetCardValue() + 1;
+        //damage += card.GetCardValue() + 1;
 
         return damage;
     }

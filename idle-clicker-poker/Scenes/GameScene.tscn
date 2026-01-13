@@ -16,7 +16,23 @@ position = Vector2(869, 482.00003)
 scale = Vector2(2.1200023, 2.1200023)
 
 [node name="Card" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
-position = Vector2(-109.905556, -86.792366)
+position = Vector2(-101.886696, -69.81125)
+scale = Vector2(0.94339526, 0.94339526)
+
+[node name="Card2" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
+position = Vector2(-136.7923, -162.26399)
+scale = Vector2(0.8899946, 0.8899946)
+
+[node name="Card3" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
+position = Vector2(-171.22624, 23.113182)
+scale = Vector2(0.94339526, 0.94339526)
+
+[node name="Card4" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
+position = Vector2(-174.0564, -69.33957)
+scale = Vector2(0.8899946, 0.8899946)
+
+[node name="Card5" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
+position = Vector2(-97.16972, 26.415062)
 scale = Vector2(0.94339526, 0.94339526)
 
 [node name="inGameUI" parent="." instance=ExtResource("3_3mbwn")]
