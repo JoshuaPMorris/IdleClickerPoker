@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c8ru138qcycyu" path="res://Scripts/PlayerScripts/CardObj.cs" id="2_3p273"]
 
 [node name="Card" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3p273")
 hframes = 13
 vframes = 4

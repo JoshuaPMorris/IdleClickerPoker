@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\CardObj.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardObj.cs",
               "RelativeToolTip": "Scripts\\PlayerScripts\\CardObj.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAuwDIAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAYwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T06:55:02.659Z",
               "EditorCaption": ""
@@ -49,7 +49,7 @@
               "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\CardManager.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardManager.cs",
               "RelativeToolTip": "Scripts\\PlayerScripts\\CardManager.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowBkAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAuwDUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T06:51:14.242Z",
               "EditorCaption": ""
@@ -64,8 +64,7 @@
               "RelativeToolTip": "Scripts\\PlayerScripts\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T04:45:09.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-31T04:45:09.966Z"
             },
             {
               "$type": "Document",
@@ -75,10 +74,9 @@
               "RelativeDocumentMoniker": "Scripts\\CharacterScripts\\EnemyBase.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\CharacterScripts\\EnemyBase.cs",
               "RelativeToolTip": "Scripts\\CharacterScripts\\EnemyBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T04:12:56.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-31T04:12:56.552Z"
             }
           ]
         }

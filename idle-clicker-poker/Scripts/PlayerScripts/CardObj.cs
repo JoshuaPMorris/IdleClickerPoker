@@ -42,6 +42,10 @@ public partial class CardObj : Sprite2D
 
     public Card card;
 
+    // Something keeps asking for this but it only seems to be needed for that
+    public CardObj()
+    {}
+
     public CardObj(int cardID)
     {
         // Initiallise the card
@@ -62,6 +66,12 @@ public partial class CardObj : Sprite2D
         int y = Texture.GetHeight() / SPRITE_HEIGHT;
 
         totalCardSprites = (x * y);
+    }
+
+    public void SetCardValues(int _cardID)
+    {
+        card.SetValues(_cardID);
+        UpdateSprite();
     }
 
     private void UpdateSprite()

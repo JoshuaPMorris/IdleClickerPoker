@@ -1,39 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://de4j6qunkr10"]
+[gd_scene load_steps=6 format=3 uid="uid://de4j6qunkr10"]
 
 [ext_resource type="PackedScene" uid="uid://blhuvgs7oeqxd" path="res://Scenes/Characters/Enemies/BasicEnemy.tscn" id="1_2wl7v"]
 [ext_resource type="PackedScene" uid="uid://bd5xm4b4e4j5g" path="res://Scenes/Characters/Player.tscn" id="2_4bvgx"]
 [ext_resource type="PackedScene" uid="uid://b0mk5enf2w8y1" path="res://Scenes/UI.tscn" id="3_3mbwn"]
 [ext_resource type="PackedScene" uid="uid://c8v4ew4fmmymi" path="res://Scenes/Card.tscn" id="4_jwv4s"]
+[ext_resource type="Script" uid="uid://bvwf54676cr46" path="res://Scripts/PlayerScripts/CardManager.cs" id="4_lohlh"]
 
 [node name="GameScene" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_2wl7v")]
-position = Vector2(866.99994, 161)
+position = Vector2(860.99994, 157)
 scale = Vector2(2.1600003, 2.1600003)
 
 [node name="PlayerObject" parent="." instance=ExtResource("2_4bvgx")]
-position = Vector2(869, 482.00003)
-scale = Vector2(2.1200023, 2.1200023)
+position = Vector2(1014.00006, 514)
+scale = Vector2(2.0156243, 2.0312498)
 
 [node name="Card" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
-position = Vector2(-101.886696, -69.81125)
+position = Vector2(-205.39545, 14.769234)
 scale = Vector2(0.94339526, 0.94339526)
 
-[node name="Card2" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
-position = Vector2(-136.7923, -162.26399)
-scale = Vector2(0.8899946, 0.8899946)
-
-[node name="Card3" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
-position = Vector2(-171.22624, 23.113182)
-scale = Vector2(0.94339526, 0.94339526)
-
-[node name="Card4" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
-position = Vector2(-174.0564, -69.33957)
-scale = Vector2(0.8899946, 0.8899946)
-
-[node name="Card5" parent="PlayerObject" instance=ExtResource("4_jwv4s")]
-position = Vector2(-97.16972, 26.415062)
-scale = Vector2(0.94339526, 0.94339526)
+[node name="CardManager" type="Node2D" parent="PlayerObject"]
+position = Vector2(-108.65124, -72.36923)
+script = ExtResource("4_lohlh")
+spacing = 20.0
 
 [node name="inGameUI" parent="." instance=ExtResource("3_3mbwn")]
 offset_left = 262.0
