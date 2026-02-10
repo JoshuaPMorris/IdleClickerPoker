@@ -31,7 +31,7 @@ public struct Card
     }
 }
 
-public partial class CardObj : Sprite2D
+public partial class CardObj : Area2D
 {
     public static int callCounter = 0;
 
@@ -40,7 +40,14 @@ public partial class CardObj : Sprite2D
 
     private static int totalCardSprites;
 
+    private Sprite2D sprite;
+
     public Card card;
+
+    public float baseHeight;
+    public bool isSelected;
+
+    public bool isHovered;
 
     // Something keeps asking for this but it only seems to be needed for that
     public CardObj()
@@ -55,15 +62,20 @@ public partial class CardObj : Sprite2D
     public override void _Ready()
     {
         base._Ready();
+        sprite = GetChild<Sprite2D>(1);
+
         GetSpriteCount();
 
         UpdateSprite();
+
+        MouseEntered += OnMouseEntered;
+        MouseExited += OnMouseExited;
     }
 
     private void GetSpriteCount()
     {
-        int x = Texture.GetWidth() / SPRITE_WIDTH;
-        int y = Texture.GetHeight() / SPRITE_HEIGHT;
+        int x = sprite.Texture.GetWidth() / SPRITE_WIDTH;
+        int y = sprite.Texture.GetHeight() / SPRITE_HEIGHT;
 
         totalCardSprites = (x * y);
     }
@@ -76,11 +88,52 @@ public partial class CardObj : Sprite2D
 
     private void UpdateSprite()
     {
-        Frame = card.GetID();
+        sprite.Frame = card.GetID();
     }
 
-    public float GetCardValue()
+    public float GetCardDamageValue()
     {
-        return card.GetID();
+        float sMulti = 1 + (((card.suit + 1) * 3) / 100f);
+        float damage = sMulti * (card.rank + 2) + 0.05f;
+        return damage;
+    }
+
+    public static Vector2 GetCardsMidPoint(List<CardObj> _cards)
+    {
+        Vector2 point = Vector2.Zero;
+
+        for (int i = 0; i < _cards.Count; i++)
+        {
+            point += _cards[i].Position;
+        }
+
+        point.X /= _cards.Count;
+        point.Y /= _cards.Count;
+
+        return point;
+    }
+
+    public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
+    {
+        base._InputEvent(viewport, @event, shapeIdx);
+
+        // Destroy the card if it is clicked
+        if (Input.IsActionJustPressed("Click"))
+        {
+            GD.Print("Clicked");
+            CardManager.singleton.SelectPlayCard(this);
+        }
+    }
+
+    // Hover effect
+    private void OnMouseEntered()
+    {
+        isHovered = true;
+    }
+    private void OnMouseExited()
+    {
+        isHovered = false;
+
+        if (GetParent<CardGhost>().hoverSwitch) Position = Vector2.Zero;
     }
 }

@@ -45,7 +45,7 @@ public partial class EnemyBase : Area2D
     }
 
     public void TakeDamage(float _damage){
-		health -= playerScript.GetDamage();
+		health -= _damage;
         GD.Print("Ow! Health: " + health);
 
         if (health <= 0) Die();
@@ -57,13 +57,5 @@ public partial class EnemyBase : Area2D
 
         sprite.Frame = 1;
         isDead = true;
-    }
-
-    public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx)
-    {
-        if (isDead) return;
-        base._InputEvent(viewport, @event, shapeIdx);
-        // If the Character is clicked then interact with it
-		if (Input.IsActionPressed("Click")) TakeDamage(damage);
     }
 }

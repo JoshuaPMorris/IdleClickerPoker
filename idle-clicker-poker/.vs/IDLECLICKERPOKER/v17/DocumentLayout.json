@@ -3,12 +3,15 @@
   "WorkspaceRootPath": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\cardobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\cardobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\thede\\AppData\\Local\\SourceServer\\93af1d67feb8be9f6541054a584ec1402a725e17c082e79b05a2b895f4943f26\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardObj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\characterscripts\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +20,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\cardghost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\cardghost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +33,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "CardObj.cs",
+              "DocumentMoniker": "C:\\Users\\thede\\AppData\\Local\\SourceServer\\93af1d67feb8be9f6541054a584ec1402a725e17c082e79b05a2b895f4943f26\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardObj.cs",
+              "ToolTip": "C:\\Users\\thede\\AppData\\Local\\SourceServer\\93af1d67feb8be9f6541054a584ec1402a725e17c082e79b05a2b895f4943f26\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardObj.cs [Read Only]",
+              "ViewState": "AgIAADEAAAAAAAAAAAApwFYAAAAAAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-10T08:32:42.328Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CardGhost.cs",
+              "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardGhost.cs",
+              "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\CardGhost.cs",
+              "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardGhost.cs",
+              "RelativeToolTip": "Scripts\\PlayerScripts\\CardGhost.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T06:15:25.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CardObj.cs",
               "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardObj.cs",
               "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\CardObj.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardObj.cs",
               "RelativeToolTip": "Scripts\\PlayerScripts\\CardObj.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAYwC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAwGAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T06:55:02.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CardManager.cs",
               "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardManager.cs",
               "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\CardManager.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardManager.cs",
               "RelativeToolTip": "Scripts\\PlayerScripts\\CardManager.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAuwDUAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAhwGoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T06:51:14.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Player.cs",
               "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\Player.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\Player.cs",
               "RelativeToolTip": "Scripts\\PlayerScripts\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T04:45:09.966Z"
+              "WhenOpened": "2025-12-31T04:45:09.966Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EnemyBase.cs",
               "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\CharacterScripts\\EnemyBase.cs",
               "RelativeDocumentMoniker": "Scripts\\CharacterScripts\\EnemyBase.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\CharacterScripts\\EnemyBase.cs",
               "RelativeToolTip": "Scripts\\CharacterScripts\\EnemyBase.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwBoAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwDsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T04:12:56.552Z"
+              "WhenOpened": "2025-12-31T04:12:56.552Z",
+              "EditorCaption": ""
             }
           ]
         }
