@@ -104,7 +104,8 @@ public partial class CardManager : Node2D
         // If the card is selected then play the card
         if (selectedHand.Contains(_card))
         {
-            enemy.TakeDamage(_card.GetCardDamageValue());
+            EnemyManager.singleton.Attack(_card.GetCardDamageValue());
+            //enemy.TakeDamage(_card.GetCardDamageValue());
 
             selectedHand.Remove(_card);
 

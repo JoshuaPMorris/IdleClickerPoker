@@ -42,6 +42,9 @@ public partial class CardObj : Area2D
 
     private Sprite2D sprite;
 
+    [Export] private int rank;
+    [Export] private int suit;
+
     public Card card;
 
     public float baseHeight;
@@ -68,6 +71,9 @@ public partial class CardObj : Area2D
 
         UpdateSprite();
 
+        rank = card.rank;
+        suit = card.suit;
+
         MouseEntered += OnMouseEntered;
         MouseExited += OnMouseExited;
     }
@@ -93,8 +99,16 @@ public partial class CardObj : Area2D
 
     public float GetCardDamageValue()
     {
-        float sMulti = 1 + (((card.suit + 1) * 3) / 100f);
+        // Set the correct multiplier for the suits, the order of the cards is backwards and I dont wanna fix it ATM
+        int suitMulti = card.suit;
+        suitMulti += card.suit >= 2 ? 1 : 0;
+        suitMulti -= 2;
+        suitMulti *= -1;
+        
+        // Modify the damage based on the suit and rank of the card
+        float sMulti = 1 + (((suitMulti) * 3) / 100f);
         float damage = sMulti * (card.rank + 2) + 0.05f;
+
         return damage;
     }
 
