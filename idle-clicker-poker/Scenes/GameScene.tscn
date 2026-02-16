@@ -1,17 +1,20 @@
 [gd_scene load_steps=6 format=3 uid="uid://de4j6qunkr10"]
 
 [ext_resource type="PackedScene" uid="uid://blhuvgs7oeqxd" path="res://Scenes/Characters/Enemies/BasicEnemy.tscn" id="1_2wl7v"]
-[ext_resource type="Script" uid="uid://dtbq4n07dwjdt" path="res://Scripts/PlayerScripts/EnemyManager.cs" id="1_lohlh"]
+[ext_resource type="Script" uid="uid://dv24gmrl3li0k" path="res://Scripts/CharacterScripts/EnemyManager.cs" id="1_lohlh"]
 [ext_resource type="PackedScene" uid="uid://bd5xm4b4e4j5g" path="res://Scenes/Characters/Player.tscn" id="2_4bvgx"]
 [ext_resource type="PackedScene" uid="uid://b0mk5enf2w8y1" path="res://Scenes/UI.tscn" id="3_3mbwn"]
 [ext_resource type="Script" uid="uid://bvwf54676cr46" path="res://Scripts/PlayerScripts/CardManager.cs" id="4_lohlh"]
 
 [node name="GameScene" type="Node2D"]
 
-[node name="EnemyManager" type="Node2D" parent="."]
-position = Vector2(860, 158)
+[node name="EnemyManager" type="Node2D" parent="." node_paths=PackedStringArray("enemyLocation")]
+position = Vector2(866, 158)
 script = ExtResource("1_lohlh")
 enemyScenes = Array[PackedScene]([ExtResource("1_2wl7v")])
+enemyLocation = NodePath("EnemySpawnLoaction")
+
+[node name="EnemySpawnLoaction" type="Node2D" parent="EnemyManager"]
 
 [node name="Enemy" parent="." instance=ExtResource("1_2wl7v")]
 visible = false
@@ -22,11 +25,19 @@ scale = Vector2(2.1600003, 2.1600003)
 position = Vector2(1014, 570)
 
 [node name="CardManager" type="Node2D" parent="PlayerObject" node_paths=PackedStringArray("selectNode")]
-position = Vector2(-289, -98.000015)
+position = Vector2(-293, -99.000015)
 script = ExtResource("4_lohlh")
 selectNode = NodePath("SelectedHandPositioner")
 defaultSpacing = 40.0
+dealSize = 20
 raiseHeight = 20.0
+pair = 1.3
+threeOfAKind = 2.0
+straight = 2.5
+flush = 3.5
+fullHouse = 4.0
+fourOfAKind = 5.0
+royalFlush = 1.5
 
 [node name="SelectedHandPositioner" type="Node2D" parent="PlayerObject/CardManager"]
 position = Vector2(38, -115.000015)

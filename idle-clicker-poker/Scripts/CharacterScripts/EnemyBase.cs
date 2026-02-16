@@ -11,10 +11,14 @@ public partial class EnemyBase : Area2D
     [Export] private float health;
     [Export] private float armour;
 
+    [Export] private Label healthLabel;
+
     // This function is called once when the node is in the scene and is ready to be used
     public override void _Ready()
     {
         base._Ready();
+
+        UpdateDisplay();
     }
 
     public bool TakeDamage(float _damage)
@@ -22,11 +26,19 @@ public partial class EnemyBase : Area2D
         float damage = _damage - (_damage / (maxArmour - armour));
         health -= damage;
 
+        UpdateDisplay();
+
         if (health <= 0) 
         {
             sprite.Frame = 1;
             return true;
         }
         return false;
+    }
+
+    private void UpdateDisplay()
+    { 
+        // Update health display
+        healthLabel.Text = Math.Ceiling(health).ToString(); 
     }
 }

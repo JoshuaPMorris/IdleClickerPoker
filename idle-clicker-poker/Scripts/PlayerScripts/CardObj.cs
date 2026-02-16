@@ -22,7 +22,7 @@ public struct Card
     public void SetValues(int _cardID)
     {
         rank = _cardID % 13;
-        suit = _cardID % 4;
+        suit = _cardID / 13;
     }
 
     public int GetID()
@@ -134,7 +134,6 @@ public partial class CardObj : Area2D
         // Destroy the card if it is clicked
         if (Input.IsActionJustPressed("Click"))
         {
-            GD.Print("Clicked");
             CardManager.singleton.SelectPlayCard(this);
         }
     }
