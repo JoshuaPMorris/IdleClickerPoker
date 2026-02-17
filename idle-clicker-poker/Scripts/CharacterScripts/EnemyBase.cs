@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class EnemyBase : Area2D
+public partial class EnemyBase : Node2D
 {
     public static float maxArmour = 100;
 

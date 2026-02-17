@@ -46,8 +46,7 @@
               "RelativeToolTip": "Scripts\\CharacterScripts\\EnemyManager.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T05:28:02.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T05:28:02.113Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "Scripts\\PlayerScripts\\CardObj.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAADgvxgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:49:06.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T07:49:06.618Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,7 @@
               "RelativeToolTip": "Scripts\\CharacterScripts\\EnemyBase.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwB4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T04:12:56.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-31T04:12:56.552Z"
             },
             {
               "$type": "Document",
@@ -83,7 +80,7 @@
               "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\CardManager.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardManager.cs",
               "RelativeToolTip": "Scripts\\PlayerScripts\\CardManager.cs",
-              "ViewState": "AgIAAA4BAAAAAAAAAAAIwB8BAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T06:51:14.242Z",
               "EditorCaption": ""
@@ -98,8 +95,7 @@
               "RelativeToolTip": "Scripts\\PlayerScripts\\CardGhost.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T06:15:25.45Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T06:15:25.45Z"
             },
             {
               "$type": "Document",
@@ -111,8 +107,7 @@
               "RelativeToolTip": "Scripts\\PlayerScripts\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-31T04:45:09.966Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-31T04:45:09.966Z"
             }
           ]
         }

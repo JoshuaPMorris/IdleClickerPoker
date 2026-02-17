@@ -7,13 +7,10 @@ public partial class CardManager : Node2D
 {
     // Singleton
     public static CardManager singleton;
-
+    
     public static RandomNumberGenerator RNG = new RandomNumberGenerator();
 
     private static int totalCardSprites = 52;
-
-    // Temporary thing
-    private EnemyBase enemy;
 
     private List<CardObj> playerHand = new List<CardObj>();
     public List<CardObj> selectedHand = new List<CardObj>();
@@ -63,7 +60,6 @@ public partial class CardManager : Node2D
     public override void _Ready()
     {
         base._Ready();
-        enemy = GetNode<EnemyBase>("../../Enemy");
 
         if (singleton == null) singleton = this;
 
@@ -72,7 +68,7 @@ public partial class CardManager : Node2D
         cardGhostScene = GD.Load<PackedScene>("res://Scenes/CardGhost.tscn");
     }
 
-    private void DrawCard(bool skipSpacing = false, int cardToDraw = -1)
+    public void DrawCard(bool skipSpacing = false, int cardToDraw = -1)
     {
         if (playerHand.Count + selectedHand.Count >= maxCards) return;
 
