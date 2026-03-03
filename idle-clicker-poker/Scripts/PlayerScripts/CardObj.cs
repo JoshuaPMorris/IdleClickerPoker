@@ -8,26 +8,18 @@ public struct Card
 {
     public Card(int _cardID)
     {
-        SetValues(_cardID);
-    }
-    public Card(int _rank, int _suit)
-    {
-        rank = _rank;
-        suit = _suit;
+        cardID = _cardID;
     }
 
-    public int rank { get; private set; }
-    public int suit { get; private set; }
+    public int cardID { get; private set; }
 
-    public void SetValues(int _cardID)
-    {
-        rank = _cardID % 13;
-        suit = _cardID / 13;
-    }
+    public int GetRank() { return cardID % 13; }
 
-    public int GetID()
+    public int GetSuit() { return cardID / 13; }
+
+    public void SetID(int _cardID)
     {
-        return (suit * 13) + rank;
+        cardID = _cardID;
     }
 }
 
@@ -71,8 +63,8 @@ public partial class CardObj : Area2D
 
         UpdateSprite();
 
-        rank = card.rank;
-        suit = card.suit;
+        rank = card.GetRank();
+        suit = card.GetSuit();
 
         MouseEntered += OnMouseEntered;
         MouseExited += OnMouseExited;
@@ -88,26 +80,26 @@ public partial class CardObj : Area2D
 
     public void SetCardValues(int _cardID)
     {
-        card.SetValues(_cardID);
+        card.SetID(_cardID);
         UpdateSprite();
     }
 
     private void UpdateSprite()
     {
-        sprite.Frame = card.GetID();
+        sprite.Frame = card.cardID;
     }
 
     public float GetCardDamageValue()
     {
         // Set the correct multiplier for the suits, the order of the cards is backwards and I dont wanna fix it ATM
-        int suitMulti = card.suit;
-        suitMulti += card.suit >= 2 ? 1 : 0;
+        int suitMulti = card.GetSuit();
+        suitMulti += card.GetSuit() >= 2 ? 1 : 0;
         suitMulti -= 2;
         suitMulti *= -1;
         
         // Modify the damage based on the suit and rank of the card
         float sMulti = 1 + (((suitMulti) * 3) / 100f);
-        float damage = sMulti * (card.rank + 2) + 0.05f;
+        float damage = sMulti * (card.GetRank() + 2) + 0.05f;
 
         return damage;
     }
@@ -134,7 +126,7 @@ public partial class CardObj : Area2D
         // Destroy the card if it is clicked
         if (Input.IsActionJustPressed("Click"))
         {
-            CardManager.singleton.SelectPlayCard(this);
+            CardManager.singleton.PlayOrSelectCard(this);
         }
     }
 

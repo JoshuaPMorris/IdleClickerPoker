@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\cardmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\cardobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\cardobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\characterscripts\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\characterscripts\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\characterscripts\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\cardobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|solutionrelative:scripts\\playerscripts\\cardobj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A56B5CB-7A03-44D5-B441-8674E596ED18}|IdleClickerPoker.csproj|e:\\personal game dev\\github\\idleclickerpoker\\idle-clicker-poker\\scripts\\playerscripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,24 +38,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Deck.cs",
               "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\Deck.cs",
               "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\Deck.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\Deck.cs",
               "RelativeToolTip": "Scripts\\PlayerScripts\\Deck.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAMwAwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T06:13:39.759Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "CardManager.cs",
+              "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\CardManager.cs",
+              "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardManager.cs",
+              "RelativeToolTip": "Scripts\\PlayerScripts\\CardManager.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAIwGAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T04:53:12.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "EnemyManager.cs",
               "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\CharacterScripts\\EnemyManager.cs",
               "RelativeDocumentMoniker": "Scripts\\CharacterScripts\\EnemyManager.cs",
@@ -68,20 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CardManager.cs",
-              "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\CardManager.cs",
-              "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardManager.cs",
-              "RelativeToolTip": "Scripts\\PlayerScripts\\CardManager.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAYwEUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T04:53:12.988Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "EnemyBase.cs",
               "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\CharacterScripts\\EnemyBase.cs",
               "RelativeDocumentMoniker": "Scripts\\CharacterScripts\\EnemyBase.cs",
@@ -94,13 +94,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "CardObj.cs",
               "DocumentMoniker": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardObj.cs",
               "RelativeDocumentMoniker": "Scripts\\PlayerScripts\\CardObj.cs",
               "ToolTip": "E:\\Personal Game Dev\\GitHub\\IdleClickerPoker\\idle-clicker-poker\\Scripts\\PlayerScripts\\CardObj.cs",
               "RelativeToolTip": "Scripts\\PlayerScripts\\CardObj.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAowFkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T05:04:23.08Z",
               "EditorCaption": ""

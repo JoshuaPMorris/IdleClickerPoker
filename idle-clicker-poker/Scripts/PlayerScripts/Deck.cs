@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Deck : Area2D
 {
@@ -9,7 +10,7 @@ public partial class Deck : Area2D
 
         if (Input.IsActionJustPressed("Click"))
         {
-            CardManager.singleton.DrawCard();
+            CardManager.singleton.DrawFromDeck();
         }
     }
 }

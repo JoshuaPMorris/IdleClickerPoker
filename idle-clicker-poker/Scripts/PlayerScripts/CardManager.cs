@@ -12,6 +12,8 @@ public partial class CardManager : Node2D
 
     private static int totalCardSprites = 52;
 
+    private List<int> deck = new List<int>();
+
     private List<CardObj> playerHand = new List<CardObj>();
     public List<CardObj> selectedHand = new List<CardObj>();
 
@@ -20,6 +22,7 @@ public partial class CardManager : Node2D
     [Export] private PackedScene cardScene;
     [Export] private PackedScene cardGhostScene;
 
+    [ExportGroup("Deal Settings")]
     [Export] public Node2D selectNode;
     [Export] private float defaultSpacing = 20;
     [Export] private float maxCap = 10;
@@ -28,7 +31,7 @@ public partial class CardManager : Node2D
     [Export] private float cardSize = 63;
     [Export] public float raiseHeight = 10;
     [Export] private int playSize = 5;
-
+    [Export] private int numTimesToShuffle = 52;
 
     [ExportGroup("Hand Multipliers")]
     // Damage multipliers for each hand
@@ -49,11 +52,11 @@ public partial class CardManager : Node2D
         {
             for (int i = 0; i < maxCards; i++)
             {
-                DrawCard(false, i);
+                DrawCard(i, false);
             }
         } else if (Input.IsActionJustPressed("Draw"))
         {
-            DrawCard();
+            DrawFromDeck();
         }
     }
 
@@ -63,19 +66,47 @@ public partial class CardManager : Node2D
 
         if (singleton == null) singleton = this;
 
+        // Fills the deck
+        for (int i = 0; i < totalCardSprites; i++) deck.Add(i);
+        ShuffleDeck(52);
+
         // Preload scenes
         cardScene = GD.Load<PackedScene>("res://Scenes/Card.tscn");
         cardGhostScene = GD.Load<PackedScene>("res://Scenes/CardGhost.tscn");
     }
 
-    public void DrawCard(bool skipSpacing = false, int cardToDraw = -1)
+    // Draws a card from the limited deck, ensuring no duplicate cards are drawn
+    public void DrawFromDeck()
+    {
+        //int selectedCardID = deck[RNG.RandiRange(0, deck.Count - 1)];
+        int selectedCardID = deck[deck.Count - 1];
+        DrawCard(selectedCardID, false);
+    }
+    private void AddToDeck(int cardID, float whereToAdd)
+    {
+        int index = RNG.RandiRange(0, (int)((float)deck.Count / whereToAdd));
+        deck.Insert(index, cardID);
+    }
+
+    private void ShuffleDeck(int numShuffles)
+    {
+        for(int i = 0; i < numShuffles; i++)
+        {
+            for(int x = 0; x < deck.Count; x++)
+            {
+                int ID = deck[x];
+                deck.RemoveAt(x);
+                AddToDeck(ID, 1);
+            }
+        }
+    }
+
+    private void DrawCard(int cardToDraw, bool skipSpacing = false)
     {
         if (playerHand.Count + selectedHand.Count >= maxCards) return;
 
-        if (cardToDraw > -1)
-            playerHand.Add(CreateCardObject(cardToDraw, Vector2.Zero));
-        else
-            playerHand.Add(CreateCardObject(RNG.RandiRange(0, totalCardSprites - 1), Vector2.Zero));
+        playerHand.Add(CreateCardObject(cardToDraw, Vector2.Zero));
+        deck.Remove(cardToDraw);
 
         if (skipSpacing) return;
 
@@ -97,7 +128,7 @@ public partial class CardManager : Node2D
         SpaceCards(ref playerHand, defaultSpacing, maxCap, GlobalPosition);
     }
 
-    public void SelectCard(CardObj _card)
+    private void SelectCard(CardObj _card)
     {
         // If there are already 4 cards selected do nothing
         if (selectedHand.Count >= playSize) 
@@ -109,38 +140,47 @@ public partial class CardManager : Node2D
 
         _card.baseHeight = selectNode.Position.Y;
 
-
         selectedHand.Add(_card);
         RemoveCard(_card);
 
         _card.GetParent<Node2D>().Reparent(selectNode);
     }
-    public void SelectPlayCard(CardObj _card)
+
+    private void PlayCard(CardObj _card)
+    {
+        last5Cards.Add(_card.card);
+        if (last5Cards.Count > 5)
+        {
+            // Add the now 6th most recently played card back to the deck and remove it from the tally
+            AddToDeck(last5Cards[0].cardID, 2);
+            last5Cards.RemoveAt(0);
+        }
+
+        // Calculate the damage
+        float damage = _card.GetCardDamageValue();
+        float multi = GetHandTypeMulti();
+        GD.Print(multi);
+
+        // Attack the enemy
+        EnemyManager.singleton.Attack(damage * multi);
+
+        selectedHand.Remove(_card);
+
+        // Destroy the card object
+        _card.GetParent<CardGhost>().QueueFree();
+        _card.QueueFree();
+    }
+
+    public void PlayOrSelectCard(CardObj _card)
     {
         // If the card is selected then play the card
         if (selectedHand.Contains(_card))
         {
-            last5Cards.Add(_card.card);
-            if (last5Cards.Count > 5)
-                last5Cards.RemoveAt(0);
-
-            // Calculate the damage
-            float damage = _card.GetCardDamageValue();
-            float multi = GetHandTypeMulti();
-
-            GD.Print(multi);
-
-            // Attack the enemy
-            EnemyManager.singleton.Attack(damage * multi);
-
-            selectedHand.Remove(_card);
-
-            _card.GetParent<CardGhost>().QueueFree();
-            _card.QueueFree();
-
+            PlayCard(_card);
             return;
         }
 
+        // Otherwise select that card
         SelectCard(_card);
     }
 
@@ -160,16 +200,16 @@ public partial class CardManager : Node2D
             // Skip if it's on the last card. This allows 
             if (i == last5Cards.Count - 1) continue;
 
-            if (last5Cards[i].rank == last5Cards[last5Cards.Count - 1].rank) sameRank++;
-            if (last5Cards[i].suit == last5Cards[last5Cards.Count - 1].suit) sameSuit++;
+            if (last5Cards[i].GetRank() == last5Cards[last5Cards.Count - 1].GetRank()) sameRank++;
+            if (last5Cards[i].GetSuit() == last5Cards[last5Cards.Count - 1].GetSuit()) sameSuit++;
 
-            if (last5Cards[i].rank != last5Cards[last5Cards.Count - 1].rank)
+            if (last5Cards[i].GetRank() != last5Cards[last5Cards.Count - 1].GetRank())
             {
                 // If fullHouseOtherRank is the same as the rank of the most recent card then it has not be 'assigned'
                 if (fullHouseOtherRank == 20)
-                    fullHouseOtherRank = last5Cards[i].rank;
+                    fullHouseOtherRank = last5Cards[i].GetRank();
 
-                if (last5Cards[i].rank == fullHouseOtherRank) numLikeOtherCard++;
+                if (last5Cards[i].GetRank() == fullHouseOtherRank) numLikeOtherCard++;
             }
         }
         if (last5Cards.Count == 5)
@@ -247,19 +287,20 @@ public partial class CardManager : Node2D
         return multiplier;
     }
 
+    // Comparison function to allow the Card struct to be sorted
     private static int CompareCards(Card x, Card y)
     {
         // Compare x and y by rank first then by suit if it is the same rank
-        if (x.rank > y.rank)
+        if (x.GetRank() > y.GetRank())
             return -1;
-        else if (x.rank < y.rank)
+        else if (x.GetRank() < y.GetRank())
             return 1;
         else
         {
             // Need to do the inverse because the card sprite sheet is in reverse order
-            if (x.suit < y.suit) 
+            if (x.GetSuit() < y.GetSuit()) 
                 return -1;
-            else if (x.suit > y.suit)
+            else if (x.GetSuit() > y.GetSuit())
                 return 1;
 
             // The cards must be exactly identical
@@ -270,7 +311,6 @@ public partial class CardManager : Node2D
     private bool CheckStraight(out bool isRoyal)
     {
         isRoyal = false;
-        //List<Card> cards = last5Cards;
         Card[] cards = new Card[5];
 
         last5Cards.CopyTo(cards);
@@ -278,24 +318,25 @@ public partial class CardManager : Node2D
         // Sort the cards in Decending order
         Array.Sort(cards, CompareCards);
 
-        if (cards[0].rank == cards[1].rank + 1 &&
-            cards[1].rank == cards[2].rank + 1 &&
-            cards[2].rank == cards[3].rank + 1 &&
-            cards[3].rank == cards[4].rank + 1)
+        if (cards[0].GetRank() == cards[1].GetRank() + 1 &&
+            cards[1].GetRank() == cards[2].GetRank() + 1 &&
+            cards[2].GetRank() == cards[3].GetRank() + 1 &&
+            cards[3].GetRank() == cards[4].GetRank() + 1)
         {
             // If the highest card is an Ace then it is Royal
-            if (cards[0].rank == 12) isRoyal = true;
+            if (cards[0].GetRank() == 12) isRoyal = true;
             return true;
         }
 
         return false;
     }
 
+    // NOT IN USE
     private void DealHand(int _numCards)
     {
         for (int i = playerHand.Count; i < _numCards; i++)
         {
-            DrawCard(true);
+            DrawCard(-1, true);
         }
 
         SpaceCards(ref playerHand, defaultSpacing, maxCap, GlobalPosition);
@@ -328,7 +369,7 @@ public partial class CardManager : Node2D
 
         instance.Position = positon;
 
-        instance.card.SetValues(_cardID);
+        instance.card.SetID(_cardID);
 
         // Spawn nodes then Reparent the card to its ghost
         AddChild(ghostInstance);

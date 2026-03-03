@@ -25,6 +25,7 @@ selectNode = NodePath("SelectedHandPositioner")
 defaultSpacing = 40.0
 dealSize = 20
 raiseHeight = 20.0
+numTimesToShuffle = 500
 pair = 1.3
 threeOfAKind = 2.0
 straight = 2.5
@@ -42,7 +43,7 @@ texture = ExtResource("5_kilg5")
 position = Vector2(22.902248, -113.66342)
 
 [node name="Area2D" parent="CardManager" instance=ExtResource("5_x6js8")]
-position = Vector2(382.55347, -118.75282)
+position = Vector2(366.43704, -110.270485)
 
 [node name="inGameUI" parent="." instance=ExtResource("3_3mbwn")]
 offset_left = 262.0
